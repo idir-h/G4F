@@ -16,7 +16,7 @@ def get_imgs_url(page_url):
   driver.get(page_url)
 
   # Attendre que les ressources soient bien chargées
-  time.sleep(5)
+  time.sleep(10)
 
   # Récupérer le nombre de pages (équivalent du span dans ton JS)
   try:
@@ -80,7 +80,7 @@ else :
     print("BASE URL non trouver ! ")
 
 OUTPUT_PDF = "output.pdf"
-IMG_DIR = "testimgs"
+IMG_DIR = "imgs"
 
 # 📌 Créer dossier imgs avec chemin absolu
 current_dir = os.getcwd()
