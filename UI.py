@@ -5,9 +5,8 @@ import shutil
 import os
 
 def input_clignotant(prompt="Your message: "):
-    RESET = "\033[0m"
-    prompt_color = "\033[92m"
-    sys.stdout.write(f"{prompt_color}{prompt}{RESET}")
+    
+    sys.stdout.write(f"{prompt}")
     sys.stdout.flush()
     user_input = []
     blink = True
@@ -17,7 +16,7 @@ def input_clignotant(prompt="Your message: "):
             last_time = time.time()
             cursor = "|" if blink else " "
             blink = not blink
-            sys.stdout.write(f"\r{prompt_color}{prompt}{RESET}\033[93m{''.join(user_input)}{RESET}{cursor}")
+            sys.stdout.write(f"\r{prompt}{''.join(user_input)}{cursor}")
             sys.stdout.flush()
         if msvcrt.kbhit():
             c = msvcrt.getwch()
@@ -28,7 +27,7 @@ def input_clignotant(prompt="Your message: "):
             elif c not in ("\x00", "\xe0"):
                 user_input.append(c)
         time.sleep(0.01)
-    sys.stdout.write(f"\r{prompt_color}{prompt}{RESET}\033[93m{''.join(user_input)}{RESET} \n")
+    sys.stdout.write(f"\r{prompt}\033[93m{''.join(user_input)} \n")
     sys.stdout.flush()
     return ''.join(user_input)
 

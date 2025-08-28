@@ -1,4 +1,5 @@
 import os
+import shutil
 import cairosvg
 from PyPDF2 import PdfMerger
 import sys
@@ -41,5 +42,6 @@ def pdf_maker(total_pages):
 
     merger.write(output_pdf)
     merger.close()
-
+    if os.path.exists(input_folder):
+        shutil.rmtree(input_folder)
     print(f"All files merged into: {output_pdf}")

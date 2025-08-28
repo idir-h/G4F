@@ -1,36 +1,57 @@
-# Calaméo Downloader
+# 📖 G4F  
 
-A Python script to download books from [Calaméo](https://www.calameo.com/) for free by saving each page as an SVG file.
+**G4F** is a Python program that allows you to **download books from Calaméo for free**.  
+The script automatically saves each page in **SVG format**, then converts all pages into a **single PDF file** for easy offline reading.  
+ 
 
-## Features
+---
 
-- Extract image URLs from a Calaméo book using Selenium.
-- Automatically download pages as `.svg` or `.svgz`.
-- Supports decompression of `.svgz` files.
-- Saves all pages in a local folder named `imgs`.
-- Works with any publicly accessible Calaméo book.
+The project is modular and organized into three main components:  
+- `UI.py` → manages the user interface (messages, colors, blinking cursor).  
+- `imgs_downloader.py` → handles image extraction and downloading from a given URL.  
+- `pdf_maker.py` → converts the downloaded images into a single PDF.  
 
-## Requirements
+---
 
-- Python 3.x
-- `selenium`
-- `requests`
-- `PyMuPDF` (`fitz`) — optional if you later want to create PDFs
-- Chrome WebDriver (make sure `chromedriver` is installed and in PATH)
+## 🚀 Features 
 
-## Usage
+-  Download full books from Calaméo by simply providing the URL  
+-  Save pages in **SVG** format for best quality  
+-  Automatically merge all pages into a **clean, single PDF file**  
+-  Temporary files are cleaned up after PDF generation  
+-  Simple to use with a professional terminal interface 
 
-1. Clone this repository:
+---
+
+## 🛠️ Requirements  
+Make sure you have installed:  
+
+- Python 3.8+  
+- Google Chrome  
+- ChromeDriver (compatible with your Chrome version)  
+- Python packages:  
+
+  ```bash
+  pip install selenium requests fitz PyMuPDF colorama
+  
+## 📂 Project Structure  
    ```bash
-   git clone <your-repo-url>
-   cd <repo-folder>
+   ├── UI.py               # Handles the terminal user interface (progress bar, messages, cursor, etc.)  
+   ├── imgs_downloader.py  # Downloads images from a given URL  
+   ├── pdf_maker.py        # Converts images into a PDF  
+   ├── main.py             # Main entry point of the program  
+   └── README.md           # Project documentation
+   ```
+## ▶️ Usage  
 
-2. Install required packages:
-   pip install selenium requests PyMuPDF
+Installation:
 
-3. Run the script:
-   python G4F.py
+```bash
+git clone https://github.com/idir-h/G4F.git
+cd G4F
+```
+Run the program with:  
 
-4. Enter the URL of the Calaméo book when prompted.
-All pages will be saved in the imgs/ folder.
-   
+```bash
+python ./G4F.py
+```
