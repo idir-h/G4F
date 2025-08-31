@@ -50,9 +50,9 @@ Installation:
 git clone https://github.com/idir-h/G4F.git
 cd G4F
 ```
-
+Run the program with:
 ![Image](https://github.com/user-attachments/assets/bc9112a4-1421-493e-a1d4-0909bacac5e1)
-Run the program with:  
+  
 
 ```bash
 python ./G4F.py
